@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Rutinas
+    </ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="end"></ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-list>
+      <ion-item-sliding *ngFor="let Ejercicio of items | async">
+        <ion-item>
+          <ion-input #box (click)='masDetalles(box.value)' value="{{ Ejercicio.Nombre }}" [Disabled]=""></ion-input>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+</ion-content>

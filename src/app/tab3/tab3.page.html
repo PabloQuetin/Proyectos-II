@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mas Rutinas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-item>
+      <ion-input placeholder="Nombre de la rutina" #name_rutina></ion-input>
+    </ion-item>
+    <ion-item >  
+      <ion-label>Ejercicio</ion-label>      
+      <ion-select multiple="false" cancelText="Cancelar" okText="Seleccionar" #name>
+        <ion-select-option *ngFor="let Ejercicio of items | async" value="{{ Ejercicio.Nombre }}">
+         {{ Ejercicio.Nombre }}
+       </ion-select-option>           
+      </ion-select>
+    </ion-item>  
+    <ion-item>
+      <ion-input type="number" min="0" placeholder="Reps/tiempo" id="reps" name="reps" #reps required></ion-input>
+    </ion-item>
+    <ion-item class="ion-float-right">
+      <ion-button color="primary" (click)="Add_ej(name.value,reps.value)" shape="round">add</ion-button>
+    </ion-item>
+  </ion-card>  
+  <ion-button color="primary" expand="block" (click)="Add_rutina(name_rutina.value)" class="boton" shape="round">Guardar Rutina</ion-button>
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let i of Ejercicios_seleccionados">
+        <ion-label>{{ i.Ejercicio }}</ion-label>
+        <ion-label>{{i.Repeticiones}} </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>  
+</ion-content>  

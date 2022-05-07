@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos de cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="mandar_data()" [formGroup]="formularioInfo">
+    <div class="input-group">
+      <ion-item class="boton">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input formControlName="Nombre"></ion-input>
+      </ion-item>
+      <ion-item class="boton">
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input formControlName="Apellidos"></ion-input>
+      </ion-item>
+      <ion-item class="boton">
+        <ion-label position="floating">Edad</ion-label>
+        <ion-input formControlName="Edad"></ion-input>
+      </ion-item>
+      <ion-item class="boton">
+        <ion-label position="floating">Peso</ion-label>
+        <ion-input formControlName="Peso"></ion-input>
+      </ion-item>
+      <ion-button type="submit" expand="block" class="boton" shape="round">Guardar</ion-button>
+    </div>
+  </form>
+</ion-content>

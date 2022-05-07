@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="\"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-align-self-center">
+  <form (ngSubmit)="logIn()" [formGroup]="formularioLogin">
+    <div class="input-group">
+      <ion-item class="boton">
+        <ion-label position="floating">Email Usuario</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item class="boton">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+    </div>
+  </form>
+  <ion-button type="submit" expand="block" (click)='logIn()' class="boton" shape="round">Iniciar Sesión</ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end" [routerLink]="['/registro']" class="margen">
+      <ion-button>Si no tiene cuenta</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

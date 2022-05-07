@@ -1,0 +1,27 @@
+.icono {
+  font-size: 150px;
+}
+
+.info {
+  margin-left: 20px;
+}
+
+.userinfo {
+  padding: 10%;
+  font-family: Consolas, monaco, monospace;
+}
+
+.center {
+  text-align: center;
+}
+
+.boton {
+  margin-top: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+ion-item:hover {
+  --border-color: #3880ff;
+  --color: #3880ff;
+}

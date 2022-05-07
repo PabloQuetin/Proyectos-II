@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ejercicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item-sliding *ngFor="let Ejercicio of ejercicios | async">
+        <ion-item>
+          <ion-label>Nombre del ejercicio: {{ Ejercicio.Nombre }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Deporte: {{ Ejercicio.Deporte }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <div>{{ Ejercicio.Descripcion }}</div>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+</ion-content>
